@@ -5,9 +5,9 @@ from .serializers import ItemSerializer, CategorySerializer
 
 
 class ProductViewSet(viewsets.ModelViewSet):
-    queryset = Item
+    queryset = Item.objects.all()
     serializer_class = ItemSerializer
 
 class CategoryViewSet(viewsets.ModelViewSet):
-    queryset = Category
+    queryset = Category.objects.all()
     serializer_class = CategorySerializer
