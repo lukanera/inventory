@@ -17,6 +17,13 @@
    - category : m2o -> Category
    - stock_qty : PositiveInteger
    - expiration_date : DateField : nullable
+   - barcode : CharField : max_length 13 : auto generated : unique
+   
+ვალიდაციები:
+name მინიმალური სიმბოლოების რაოდენობა იყოს 5
+description მინიმალური სიტყვების რაოდენობა 2
+width, lenth, weight არ შეიძლება იყოს უარყოფითი
+experation_date სავალდებულოა თუ cateogry.name-ში ურევია სიტყვა food ან drink
    
 3. Category:
     - name : CharField
