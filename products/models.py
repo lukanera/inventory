@@ -6,13 +6,14 @@ from string import digits
 
 class Item(BaseModel):
     name = models.CharField(max_length=100)
-    description = models.TextField
+    description = models.TextField(default='this description')
     height = models.FloatField(null=True, blank=True)
     width = models.FloatField(null=True, blank=True)
     length = models.FloatField(null=True, blank=True)
+    weight = models.FloatField(null=True, blank=True, default=1)
     category = models.ForeignKey('Category', on_delete=models.CASCADE, related_name='items')
     stock_qty = models.PositiveIntegerField
-    expiration_date = models.DateTimeField(null=True)
+    expiration_date = models.DateField(null=True)
     barcode = models.CharField(max_length=13, unique=True, editable=False, blank=True)
 
     def save(self, *args, **kwargs):
